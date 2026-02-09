@@ -1,0 +1,23 @@
+import sys
+
+import requests
+import urllib.parse as up
+
+host="localhost"
+port="8000"
+path="to-hiragana"
+
+name=sys.argv[1]
+n=int(sys.argv[2])
+
+base_url=f"http://{host}:{port}/"
+url=up.urljoin(base_url,path)
+
+params={
+    "name":name,
+    "n":n
+}
+
+res=requests.get(url,params=params)
+
+print(res.json())

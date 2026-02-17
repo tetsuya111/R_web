@@ -1,0 +1,3 @@
+dotenv
+notion2md
+fastapi[all]
